@@ -37,10 +37,7 @@ JOIN PortfolioProject.dbo.Nashvillehousing b
 on a.ParcelID = b.ParcelID
 AND a. [UniqueID] <> b. [UniqueID]
 where a.PropertyAddress is null
-
---(ISNULL - if first table value is null is populate second table value or we can add string as well
---like  isnull(a.PropertyAddress, 'no address' )
-
+	
 -------------------------------------------------------------------------------------------------------
 --Breaking out address into (address, city, state)
 
@@ -124,7 +121,6 @@ from nashvillehousing;
 
 -------------------------------------------------------------------------------------------------------------------------
 --remove duplicates
---- notb do in real world is not good 
 
 WITH RowNumCTE AS(
 Select *,
